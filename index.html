@@ -5,33 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>student-grade-table</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 </head>
 
 <body>
-  <div>
+  <div class="container">
     <div class="row justify-content-between">
       <div class="col">
         <h1>Student Grade Table</h1>
       </div>
-      <div class="col-3">
+      <div class="col-4">
         <h2>Average Grade <span class="badge badge-dark"></span></h2>
       </div>
     </div>
   </div>
 
-  <table class="table table-striped">
-    <thead class="thead-dark">
-      <tr>
-        <th>Student Name</th>
-        <th>Course</th>
-        <th>Grade</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-9">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>Student Name</th>
+              <th>Course</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody>
 
-    </tbody>
-  </table>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" id="studentName" name="name" placeholder="Name">
+           </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="studentCourse" name="course" placeholder="Course">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="studentGrade" name="grade" placeholder="Grade">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="reset" class="btn btn-danger">Cancel</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
 
 <script src="components/page-header.js"></script>
 <script src="components/app.js"></script>
