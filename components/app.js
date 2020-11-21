@@ -12,11 +12,12 @@ class App {
     var newAverage = total / grades.length;
     this.pageHeader.updateAverage(newAverage)
   }
-  constructor(gradeTable, pageHeader) {
+  constructor(gradeTable, pageHeader, gradeForm) {
     this.handleGetGradesError = this.handleGetGradesError.bind(this);
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this)
     this.gradeTable = gradeTable
     this.pageHeader = pageHeader
+    this.gradeForm = gradeForm
   }
   getGrades() {
     $.ajax({
