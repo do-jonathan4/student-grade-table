@@ -1,2 +1,4 @@
-var student1 = new App()
-student1.start()
+var table = document.querySelector('table')
+var gradeTable = new GradeTable(table)
+var app = new App(gradeTable)
+app.start()
