@@ -13,8 +13,13 @@ class App {
     var newAverage = total / grades.length;
     this.pageHeader.updateAverage(newAverage)
   }
+  createGradeError(error) {
+    console.log(error)
+  }
+  handlecreateGradeSuccess() {
+    this.getGrades
+  }
   createGrade(name, course, grade) {
-    console.log(name, course, grade)
     $.ajax({
       headers: {
         "X-Access-Token": "QL4ulI2r"
@@ -26,8 +31,8 @@ class App {
         course: course,
         grade: grade
       },
-      error: this.handleGetGradesError,
-      success: this.handleGetGradesSuccess
+      error: this.createGradeError,
+      success: this.handlecreateGradeSuccess
     })
   }
   constructor(gradeTable, pageHeader, gradeForm) {
