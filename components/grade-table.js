@@ -28,9 +28,20 @@ class GradeTable {
     deleteGrade()
 
     var row = document.createElement('tr')
-    var column = document.createElement('td')
     var deleteBtn = document.createElement('button')
     deleteBtn.addEventListener('click', deleteGrade(data.id))
+
+    var column = document.createElement('td')
+    column.textContent = data.name
+    row.append(column)
+
+    column = document.createElement('td')
+    column.textContent = data.column
+    row.append(column)
+
+    column = document.createElement('td')
+    column.textContent = data.grade
+    row.append(column)
 
     column.textContent =
     return row
