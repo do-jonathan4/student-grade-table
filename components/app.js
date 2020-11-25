@@ -13,10 +13,10 @@ class App {
     var newAverage = total / grades.length;
     this.pageHeader.updateAverage(newAverage)
   }
-  createGradeError(error) {
+  handleCreateGradeError(error) {
     console.log(error)
   }
-  handlecreateGradeSuccess() {
+  handleCreateGradeSuccess() {
     this.getGrades
   }
   createGrade(name, course, grade) {
@@ -31,14 +31,18 @@ class App {
         course: course,
         grade: grade
       },
-      error: this.createGradeError,
-      success: this.handlecreateGradeSuccess
+      error: this.handleCreateGradeError,
+      success: this.handleCreateGradeSuccess
     })
   }
   constructor(gradeTable, pageHeader, gradeForm) {
     this.handleGetGradesError = this.handleGetGradesError.bind(this);
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this)
+
+    this.handleCreateGradeError = this.handleCreateGradeError.bind(this);
+    this.handleCreateGradeSuccess = this.handleCreateGradeSuccess.bind(this)
     this.createGrade = this.createGrade.bind(this)
+
     this.gradeTable = gradeTable
     this.pageHeader = pageHeader
     this.gradeForm = gradeForm
