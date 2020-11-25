@@ -19,6 +19,39 @@ class App {
   handleCreateGradeSuccess() {
     this.getGrades
   }
+  handleDeleteGradeError(error) {
+    console.log(error)
+  }
+  handleDeleteGradeSuccess() {
+    this.getGrades()
+  }
+  constructor(gradeTable, pageHeader, gradeForm) {
+    this.handleGetGradesError = this.handleGetGradesError.bind(this);
+    this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this)
+
+    this.handleCreateGradeError = this.handleCreateGradeError.bind(this);
+    this.handleCreateGradeSuccess = this.handleCreateGradeSuccess.bind(this)
+    this.createGrade = this.createGrade.bind(this)
+
+    this.handleDeleteGradeError = this.handleDeleteGradeError.bind(this);
+    this.handleDeleteGradeSuccess = this.handleDeleteGradeSuccess.bind(this)
+    this.deleteGrade = this.deleteGrade.bind(this)
+
+    this.gradeTable = gradeTable
+    this.pageHeader = pageHeader
+    this.gradeForm = gradeForm
+  }
+  getGrades() {
+    $.ajax({
+      headers: {
+        "X-Access-Token": "QL4ulI2r"
+      },
+      url: 'https://sgt.lfzprototypes.com/api/grades',
+      method: 'GET',
+      error: this.handleGetGradesError,
+      success: this.handleGetGradesSuccess
+    })
+  }
   createGrade(name, course, grade) {
     $.ajax({
       headers: {
@@ -35,28 +68,8 @@ class App {
       success: this.handleCreateGradeSuccess
     })
   }
-  constructor(gradeTable, pageHeader, gradeForm) {
-    this.handleGetGradesError = this.handleGetGradesError.bind(this);
-    this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this)
-
-    this.handleCreateGradeError = this.handleCreateGradeError.bind(this);
-    this.handleCreateGradeSuccess = this.handleCreateGradeSuccess.bind(this)
-    this.createGrade = this.createGrade.bind(this)
-
-    this.gradeTable = gradeTable
-    this.pageHeader = pageHeader
-    this.gradeForm = gradeForm
-  }
-  getGrades() {
-    $.ajax({
-      headers: {
-        "X-Access-Token": "QL4ulI2r"
-      },
-      url: 'https://sgt.lfzprototypes.com/api/grades',
-      method: 'GET',
-      error: this.handleGetGradesError,
-      success: this.handleGetGradesSuccess
-    })
+  deleteGrade(id) {
+    console.log(id)
   }
   start() {
     this.getGrades()

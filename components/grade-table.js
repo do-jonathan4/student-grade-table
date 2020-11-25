@@ -20,4 +20,19 @@ class GradeTable {
       tbody.append(tr)
     }
   }
+  onDeleteClick(deleteGrade) {
+    this.deleteGrade = deleteGrade
+  }
+  renderGradeRow(data, deleteGrade) {
+    data = {grade}
+    deleteGrade()
+
+    var row = document.createElement('tr')
+    var column = document.createElement('td')
+    var deleteBtn = document.createElement('button')
+    deleteBtn.addEventListener('click', deleteGrade(data.id))
+
+    column.textContent =
+    return row
+  }
 }
