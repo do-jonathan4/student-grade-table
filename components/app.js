@@ -22,9 +22,9 @@ class App {
       url: 'https://sgt.lfzprototypes.com/api/grades',
       method: 'POST',
       data: {
-        name: 'Jane Doe',
-        course: 'Math 101',
-        grade: 100
+        name: name,
+        course: course,
+        grade: grade
       },
       error: this.handleGetGradesError,
       success: this.handleGetGradesSuccess
