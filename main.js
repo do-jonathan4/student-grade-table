@@ -1,4 +1,4 @@
-var table = document.querySelector('table')
+var table = document.querySelector('tbody')
 var p = document.querySelector('p')
 var gradeTable = new GradeTable(table, p)
 

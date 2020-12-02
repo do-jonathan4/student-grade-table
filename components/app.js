@@ -4,7 +4,6 @@ class App {
   }
   handleGetGradesSuccess(grades) {
     this.gradeTable.updateGrades(grades)
-    this.getGrades
 
     var total = 0
     for (var i = 0; i < grades.length; i++) {

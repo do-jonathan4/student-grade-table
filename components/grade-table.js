@@ -4,19 +4,17 @@ class GradeTable {
     this.noGradesElement = noGradesElement
   }
   updateGrades(grades) {
-    var tbody = document.querySelector('tbody')
-    tbody.innerHTML = ''
+    this.tableElement.innerHTML = ''
 
-    var p = document.querySelector('p')
     if (grades) {
-      p.className = 'd-none'
+      this.noGradesElement.className = 'd-none'
     } else {
-      p.className = ''
+      this.noGradesElement.className = ''
     }
 
     for (var i = 0; i < grades.length; i++) {
       var row = this.renderGradeRow(grades[i], this.deleteGrade)
-      tbody.append(row)
+      this.tableElement.append(row)
     }
   }
   onDeleteClick(deleteGrade) {
