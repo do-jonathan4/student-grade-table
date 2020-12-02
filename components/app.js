@@ -4,7 +4,7 @@ class App {
   }
   handleGetGradesSuccess(grades) {
     this.gradeTable.updateGrades(grades)
-    this.getGrades()
+    this.getGrades
 
     var total = 0
     for (var i = 0; i < grades.length; i++) {
@@ -69,7 +69,15 @@ class App {
     })
   }
   deleteGrade(id) {
-    console.log(id)
+    $.ajax({
+      headers: {
+        "X-Access-Token": "QL4ulI2r"
+      },
+      url: 'https://sgt.lfzprototypes.com/api/grades/' + id,
+      method: 'DELETE',
+      error: this.handleDeleteGradeError,
+      success: this.handleDeleteGradeSuccess
+    })
   }
   start() {
     this.getGrades()

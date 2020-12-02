@@ -15,10 +15,9 @@ class GradeTable {
     }
 
     for (var i = 0; i < grades.length; i++) {
-      var row = this.renderGradeRow(grades, this.deleteGrade)
+      var row = this.renderGradeRow(grades[i], this.deleteGrade)
       tbody.append(row)
     }
-    console.log(grades.length)
   }
   onDeleteClick(deleteGrade) {
     this.deleteGrade = deleteGrade
