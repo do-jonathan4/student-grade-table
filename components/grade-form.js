@@ -18,6 +18,5 @@ class GradeForm {
     this.createGrade(formName, formCourse, formGrade)
 
     event.target.reset()
-
   }
 }

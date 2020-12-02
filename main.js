@@ -1,5 +1,6 @@
-var table = document.querySelector('table')
-var gradeTable = new GradeTable(table)
+var table = document.querySelector('tbody')
+var p = document.querySelector('p')
+var gradeTable = new GradeTable(table, p)
 
 var header = document.querySelector('h2')
 var pageHeader = new PageHeader(header)
