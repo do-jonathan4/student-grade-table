@@ -13,13 +13,13 @@ class App {
     this.pageHeader.updateAverage(newAverage)
   }
   handleCreateGradeError(error) {
-    console.log(error)
+    console.error(error)
   }
   handleCreateGradeSuccess() {
     this.getGrades
   }
   handleDeleteGradeError(error) {
-    console.log(error)
+    console.error(error)
   }
   handleDeleteGradeSuccess() {
     this.getGrades()
