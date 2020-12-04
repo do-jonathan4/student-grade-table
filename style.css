@@ -1,0 +1,19 @@
+body {
+  padding-top: 15px;
+}
+@media only screen and (max-width: 800px) {
+  body {
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+  div {
+    padding: 5px;
+  }
+  h1, h2 {
+    text-align: center;
+  }
+}
