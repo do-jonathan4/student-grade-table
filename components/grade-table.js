@@ -35,7 +35,7 @@ class GradeTable {
     })
 
     var changeBtn = document.createElement('button')
-    changeBtn.textContent = 'CHANGE'
+    changeBtn.textContent = 'EDIT'
     changeBtn.className = 'btn btn-success btn-sm'
     changeBtn.addEventListener('click', function () {
       changeGrade(data.id)
