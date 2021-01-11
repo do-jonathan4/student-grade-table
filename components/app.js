@@ -88,13 +88,18 @@ class App {
       success: this.handleDeleteGradeSuccess
     })
   }
-  changeGrade(id) {
+  changeGrade(id, name, course, grade) {
     $.ajax({
       headers: {
         "X-Access-Token": "QL4ulI2r"
       },
       url: 'https://sgt.lfzprototypes.com/api/grades/' + id,
       method: 'PATCH',
+      data: {
+        name: name,
+        course: course,
+        grade: grade
+      },
       error: this.handleChangeGradeError,
       success: this.handleChangeGradeSuccess
     })
