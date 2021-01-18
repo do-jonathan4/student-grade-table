@@ -21,9 +21,6 @@ class GradeTable {
   onDeleteClick(deleteGrade) {
     this.deleteGrade = deleteGrade
   }
-  onChangeClick(changeGrade) {
-    this.changeGrade = changeGrade
-  }
   renderGradeRow(data, deleteGrade, changeGrade) {
     var row = document.createElement('tr')
 
@@ -38,7 +35,7 @@ class GradeTable {
     changeBtn.textContent = 'EDIT'
     changeBtn.className = 'btn btn-success btn-sm'
     changeBtn.addEventListener('click', function () {
-      changeGrade(data.id)
+      gradeChange.copyUser(data)
     })
 
     var column = document.createElement('td')

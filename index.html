@@ -44,8 +44,8 @@
       </div>
 
       <div class=".col-md-3 .col-md-offset-3">
-        <h3>Add a Grade</h3>
-        <form>
+        <h3>Add Grade</h3>
+        <form id="form-add">
           <div class="form-group">
             <input type="text" class="form-control" id="studentName" name="name" placeholder="Name">
            </div>
@@ -61,7 +61,7 @@
       </div>
       <div class=".col-md-3 .col-md-offset-3 d-none">
         <h3>Update Grade</h3>
-        <form>
+        <form id="form-update">
           <div class="form-group">
             <input type="text" class="form-control" id="studentName" name="name" placeholder="Name">
            </div>
@@ -71,7 +71,7 @@
           <div class="form-group">
             <input type="text" class="form-control" id="studentGrade" name="grade" placeholder="Grade">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-success">Update</button>
           <button type="reset" class="btn btn-danger">Cancel</button>
         </form>
       </div>
@@ -81,6 +81,7 @@
 
 
 <script src="components/grade-form.js"></script>
+<script src="components/grade-change.js"></script>
 <script src="components/page-header.js"></script>
 <script src="components/app.js"></script>
 <script src="components/grade-table.js"></script>

@@ -30,7 +30,7 @@ class App {
   handleChangeGradeSuccess() {
     this.createGrade()
   }
-  constructor(gradeTable, pageHeader, gradeForm) {
+  constructor(gradeTable, pageHeader, gradeForm, gradeChange) {
     this.handleGetGradesError = this.handleGetGradesError.bind(this);
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this)
 
@@ -49,6 +49,7 @@ class App {
     this.gradeTable = gradeTable
     this.pageHeader = pageHeader
     this.gradeForm = gradeForm
+    this.gradeChange = gradeChange
   }
   getGrades() {
     $.ajax({
@@ -108,6 +109,6 @@ class App {
     this.getGrades()
     this.gradeForm.onSubmit(this.createGrade)
     this.gradeTable.onDeleteClick(this.deleteGrade)
-    this.gradeTable.onChangeClick(this.changeGrade)
+    // this.gradeChange.onChangeClick(this.changeGrade)
   }
 }
