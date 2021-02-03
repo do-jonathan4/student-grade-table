@@ -109,6 +109,6 @@ class App {
     this.getGrades()
     this.gradeForm.onSubmit(this.createGrade)
     this.gradeTable.onDeleteClick(this.deleteGrade)
-    // this.gradeChange.onChangeClick(this.changeGrade)
+    // this.gradeChange.onSubmit(this.changeGrade)
   }
 }
