@@ -28,7 +28,7 @@ class App {
     console.error(error)
   }
   handleChangeGradeSuccess() {
-    this.createGrade()
+    this.getGrades()
   }
   constructor(gradeTable, pageHeader, gradeForm, gradeChange) {
     this.handleGetGradesError = this.handleGetGradesError.bind(this);
@@ -109,6 +109,6 @@ class App {
     this.getGrades()
     this.gradeForm.onSubmit(this.createGrade)
     this.gradeTable.onDeleteClick(this.deleteGrade)
-    // this.gradeChange.onSubmit(this.changeGrade)
+    this.gradeChange.onSubmit(this.changeGrade)
   }
 }

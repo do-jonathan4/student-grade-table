@@ -12,10 +12,12 @@ class GradeChange {
     var changeName = document.getElementById('changeName')
     var changeCourse = document.getElementById('changeCourse')
     var changeGrade = document.getElementById('changeGrade')
+    var gradeId = document.getElementById('gradeId')
 
     changeName.value = data.name
     changeCourse.value = data.course
     changeGrade.value = data.grade
+    gradeId.value = data.id
   }
   resetForms() {
     this.parentNode.classList.add('d-none')
@@ -24,16 +26,18 @@ class GradeChange {
   onSubmit(changeGrade) {
     this.changeGrade = changeGrade
   }
-  handleSubmit() {
+  handleSubmit(event) {
     event.preventDefault()
-    // var formData = new FormData(event.target)
-    // var formName = formData.get('name');
-    // var formCourse = formData.get('course');
-    // var formGrade = formData.get('grade');
-
-    // this.changeGrade(id, formName, formCourse, formGrade)
-
+    var formData = new FormData(event.target)
+    var id = formData.get('id');
+    var formName = formData.get('name');
+    var formCourse = formData.get('course');
+    var formGrade = formData.get('grade');
+    this.changeGrade(id, formName, formCourse, formGrade)
     event.target.reset()
     this.resetForms
   }
 }
+// event.target = form
+//combine methods?
+//return?
