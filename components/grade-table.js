@@ -1,7 +1,8 @@
 class GradeTable {
-  constructor(tableElement, noGradesElement) {
+  constructor(tableElement, noGradesElement, formElement) {
     this.tableElement = tableElement
     this.noGradesElement = noGradesElement
+    this.formElement = formElement
   }
   updateGrades(grades) {
     this.tableElement.innerHTML = ''
@@ -13,21 +14,28 @@ class GradeTable {
     }
 
     for (var i = 0; i < grades.length; i++) {
-      var row = this.renderGradeRow(grades[i], this.deleteGrade)
+      var row = this.renderGradeRow(grades[i], this.deleteGrade, this.changeGrade)
       this.tableElement.append(row)
     }
   }
   onDeleteClick(deleteGrade) {
     this.deleteGrade = deleteGrade
   }
-  renderGradeRow(data, deleteGrade) {
+  renderGradeRow(data, deleteGrade, changeGrade) {
     var row = document.createElement('tr')
 
     var deleteBtn = document.createElement('button')
     deleteBtn.textContent = 'DELETE'
-    deleteBtn.className = 'btn btn-danger'
+    deleteBtn.className = 'btn btn-danger btn-sm'
     deleteBtn.addEventListener('click', function () {
       deleteGrade(data.id)
+    })
+
+    var changeBtn = document.createElement('button')
+    changeBtn.textContent = 'EDIT'
+    changeBtn.className = 'btn btn-success btn-sm'
+    changeBtn.addEventListener('click', function () {
+      gradeChange.copyUser(data)
     })
 
     var column = document.createElement('td')
@@ -43,7 +51,7 @@ class GradeTable {
     row.append(column)
 
     column = document.createElement('td')
-    column.append(deleteBtn)
+    column.append(deleteBtn, changeBtn)
     row.append(column)
 
     return row
